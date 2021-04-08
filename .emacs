@@ -46,11 +46,6 @@
 (require 'go-mode)
 (setq go-mode-indent-tabs-mode t)
 
-(add-to-list 'load-path "~/.emacs.d/dart-mode")
-(require 'dart-mode)
-(add-to-list 'auto-mode-alist '("\\.dart\\'" . dart-mode))   
-(setq dart-mode-indent-tabs-mode t)
-
 (add-to-list 'load-path "~/.emacs.d/opencl-mode")
 (require 'opencl-mode)
 (add-to-list 'auto-mode-alist '("\\.cl\\'" . opencl-mode))
