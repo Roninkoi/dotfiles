@@ -60,9 +60,9 @@
 
 (global-set-key [f6] 'preview-clearout-document)
 (global-set-key [f7] 'preview-document)
+
 (global-set-key (kbd "C-x C-a") 'replace-string)
 
-(global-set-key [f7] 'preview-document)
 (global-set-key [C-mouse-4] 'text-scale-increase)
 (global-set-key [C-mouse-5] 'text-scale-decrease)
 
