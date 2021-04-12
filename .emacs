@@ -23,7 +23,7 @@
 
 ;; window size
 (add-to-list 'default-frame-alist '(height . 50))
-(add-to-list 'default-frame-alist '(width . 120))
+(add-to-list 'default-frame-alist '(width . 110))
 
 ;; font size
 (set-face-attribute 'default nil :height 140)
@@ -34,11 +34,13 @@
 (setq-default tab-width 4)
 (defvaralias 'c-basic-offset 'tab-width)
 
+;; directory view
 (add-to-list 'load-path "~/.emacs.d/neotree")
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
 (setq visible-bell 1)
 
+;; languages
 (add-to-list 'load-path "~/.emacs.d/glsl-mode")
 (require 'glsl-mode)
 
@@ -54,6 +56,7 @@
   (interactive)
   (save-excursion
     (indent-region (point-min) (point-max) nil)))
+
 (global-set-key [f12] 'indent-buffer)
 
 (global-set-key [f11] 'tabify)
@@ -70,25 +73,43 @@
   (interactive)
   (if (and (not buffer-read-only)
            (string= (file-name-extension (buffer-file-name)) "tex"))
-   (progn
-     (add-file-local-variable 'coding 'utf-8-unix)
-     (add-file-local-variable 'TeX-engine 'luatex)
-     (goto-char (point-min)))))
+	  (progn
+		(add-file-local-variable 'coding 'utf-8-unix)
+		(add-file-local-variable 'TeX-engine 'luatex)
+		(goto-char (point-min)))))
 
 (add-hook 'LaTeX-mode-hook 'my/add-auctex-file-variables)
 
+;; compile latex document
 (defun latex-compile ()
-    (interactive)
-    (save-buffer)
-    (TeX-command "LaTeX" 'TeX-master-file))
+  (interactive)
+  (save-buffer)
+  (TeX-command "LaTeX" 'TeX-master-file))
 
 (global-set-key [f5] 'latex-compile)
+
+;; open shell on bottom (with size 30%) and switch to it
+(defun bottom-shell ()
+  (interactive)
+  (let ((w (split-window-below (round (* 0.7 (window-height))))))
+    (select-window w)
+    (shell))
+  (switch-to-buffer "*shell*"))
+
+;; open shell in same window
+(push (cons "*shell*" display-buffer--same-window-action) display-buffer-alist)
+
+;; don't ask confirmation to kill
+(setq kill-buffer-query-functions (delq 'process-kill-buffer-query-function kill-buffer-query-functions))
+
+(global-set-key [f9] 'bottom-shell)
 
 ;; disable backup
 (setq backup-inhibited t)
 ;; disable auto save
 (setq auto-save-default nil)
 
+;; don't move cursor when scrolling
 (defun gcm-scroll-down ()
   (interactive)
   (scroll-up 1))
