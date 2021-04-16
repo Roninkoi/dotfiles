@@ -1,0 +1,7 @@
+[user]
+	email = roninkoi@iki.fi
+[gui]
+	recentrepo = /home/rak/Dropbox/Dev/Corium
+[credential]
+	helper = store
+
