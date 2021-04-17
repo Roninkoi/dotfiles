@@ -5,6 +5,9 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
+# make aliases work with sudo
+alias sudo='sudo '
+
 # User specific aliases and functions
 alias emacs='emacs -nw'
 alias config='/usr/bin/git --git-dir=/home/rak/.cfg/ --work-tree=/home/rak'
