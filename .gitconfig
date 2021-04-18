@@ -1,7 +1,16 @@
 [user]
+	name = Roni Koitermaa
+	username = Roninkoi
 	email = roninkoi@iki.fi
-[gui]
-	recentrepo = /home/rak/Dropbox/Dev/Corium
+[core]
+	editor = emacs
 [credential]
 	helper = store
+[diff]
+	tool = vimdiff
+[delta]
+	features = line-numbers decorations
+	line-numbers = true
+[web]
+	browser = firefox
 
