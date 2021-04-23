@@ -8,6 +8,9 @@ fi
 # make aliases work with sudo
 alias sudo='sudo '
 
+alias ls='ls --color=auto'
+PS1='[\u@\h \W]\$ '
+
 # pacman aliases for Arch
 alias pac='pacman'
 alias paci='pacman -S' # install
@@ -23,7 +26,8 @@ alias config='/usr/bin/git --git-dir=/home/rak/.cfg/ --work-tree=/home/rak'
 alias ovito='/home/rak/ovito/bin/ovito'
 
 # development
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/rak/Documents/femocs/dealii/build/lib:/home/rak/Documents/femocs/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/rak/Documents/femocs/dealii/build/lib
 alias femocs="/home/rak/Documents/femocs/build/femocs"
 alias femocs_debug="/home/rak/Documents/femocs/build/femocs_debug"
+
 
