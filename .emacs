@@ -35,7 +35,7 @@
 (defvaralias 'c-basic-offset 'tab-width)
 
 ;; directory view
-(add-to-list 'load-path "~/.emacs.d/neotree")
+(add-to-list 'load-path "~/.emacs.d/emacs-neotree")
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
 (setq visible-bell 1)
@@ -44,13 +44,9 @@
 (add-to-list 'load-path "~/.emacs.d/glsl-mode")
 (require 'glsl-mode)
 
-(add-to-list 'load-path "~/.emacs.d/go-mode")
+(add-to-list 'load-path "~/.emacs.d/go-mode.el")
 (require 'go-mode)
 (setq go-mode-indent-tabs-mode t)
-
-(add-to-list 'load-path "~/.emacs.d/opencl-mode")
-(require 'opencl-mode)
-(add-to-list 'auto-mode-alist '("\\.cl\\'" . opencl-mode))
 
 (defun indent-buffer ()
   (interactive)

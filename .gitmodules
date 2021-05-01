@@ -1,0 +1,9 @@
+[submodule ".emacs.d/emacs-neotree"]
+	path = .emacs.d/emacs-neotree
+	url = https://github.com/jaypei/emacs-neotree
+[submodule ".emacs.d/go-mode.el"]
+	path = .emacs.d/go-mode.el
+	url = https://github.com/dominikh/go-mode.el
+[submodule ".emacs.d/glsl-mode"]
+	path = .emacs.d/glsl-mode
+	url = https://github.com/jimhourihan/glsl-mode
