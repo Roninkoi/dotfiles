@@ -21,12 +21,15 @@
 
 (set-language-environment "UTF-8")
 
-;; window size
-(add-to-list 'default-frame-alist '(height . 50))
-(add-to-list 'default-frame-alist '(width . 110))
-
 ;; font size
 (set-face-attribute 'default nil :height 140)
+
+;; window size
+;;(add-to-list 'default-frame-alist '(height . 50))
+;;(add-to-list 'default-frame-alist '(width . 110))
+
+(add-to-list 'default-frame-alist '(/ (display-pixel-height) (frame-char-height)))
+(add-to-list 'default-frame-alist '(/ (/ (display-pixel-width) 2) (frame-char-width)))
 
 (setq indent-tabs-mode t)
 (setq tab-width 6)
