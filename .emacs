@@ -29,9 +29,10 @@
 (set-face-attribute 'default nil :height 140)
 
 (setq indent-tabs-mode t)
-(setq tab-width 4)
+(setq tab-width 6)
 (setq-default indent-tabs-mode t)
-(setq-default tab-width 4)
+(setq-default tab-width 6)
+
 (defvaralias 'c-basic-offset 'tab-width)
 
 ;; directory view
@@ -51,7 +52,7 @@
 (defun indent-buffer ()
   (interactive)
   (save-excursion
-    (indent-region (point-min) (point-max) nil)))
+	(indent-region (point-min) (point-max) nil)))
 
 (global-set-key [f12] 'indent-buffer)
 
@@ -68,7 +69,7 @@
 (defun my/add-auctex-file-variables ()
   (interactive)
   (if (and (not buffer-read-only)
-           (string= (file-name-extension (buffer-file-name)) "tex"))
+		   (string= (file-name-extension (buffer-file-name)) "tex"))
 	  (progn
 		(add-file-local-variable 'coding 'utf-8-unix)
 		(add-file-local-variable 'TeX-engine 'luatex)
@@ -88,8 +89,8 @@
 (defun bottom-shell ()
   (interactive)
   (let ((w (split-window-below (round (* 0.7 (window-height))))))
-    (select-window w)
-    (shell))
+	(select-window w)
+	(shell))
   (switch-to-buffer "*shell*"))
 
 ;; open shell in same window
