@@ -16,14 +16,17 @@ alias pac='pacman'
 alias paci='pacman -S' # install
 alias pacu='pacman -Syu' # update
 alias pacr='pacman -Rs' # remove
+alias pacs='pacman -Ss' # search
+
+alias yayi='yay -S' # install
+alias yayu='yay -Syu' # update
+alias yayr='yay -Rs' # remove
+alias yays='yay -Ss' # search
 
 alias emacs='emacs -nw'
 
 # dotfiles git
 alias config='/usr/bin/git --git-dir=/home/rak/.cfg/ --work-tree=/home/rak'
-
-# installations
-alias ovito='/home/rak/ovito/bin/ovito'
 
 # development
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/rak/Documents/femocs/dealii/build/lib
