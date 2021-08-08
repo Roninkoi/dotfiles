@@ -17,11 +17,13 @@ alias paci='pacman -S' # install
 alias pacu='pacman -Syu' # update
 alias pacr='pacman -Rs' # remove
 alias pacs='pacman -Ss' # search
+alias pacl='pacman -Q | grep $1' # list
 
 alias yayi='yay -S' # install
 alias yayu='yay -Syu' # update
 alias yayr='yay -Rs' # remove
 alias yays='yay -Ss' # search
+alias yayl='yay -Q | grep $1' # list
 
 alias emacs='emacs -nw'
 
