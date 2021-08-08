@@ -5,25 +5,13 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-# make aliases work with sudo
-alias sudo='sudo '
-
-alias ls='ls --color=auto'
-PS1='[\u@\h \W]\$ '
-
-# pacman aliases for Arch
-alias pac='pacman'
-alias paci='pacman -S' # install
-alias pacu='pacman -Syu' # update
-alias pacr='pacman -Rs' # remove
-
-alias emacs='emacs -nw'
+# Source global definitions
+if [ -f ~/.bash_aliases ]; then
+	. ~/.bash_aliases
+fi
 
 # dotfiles git
 alias config='/usr/bin/git --git-dir=/home/rak/dotfiles.git/ --work-tree=/home/rak'
-
-# installations
-alias ovito='/home/rak/ovito/bin/ovito'
 
 # development
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/rak/Documents/femocs/dealii/build/lib

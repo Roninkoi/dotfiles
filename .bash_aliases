@@ -24,3 +24,4 @@ alias yays='yay -Ss' # search
 alias yayl='yay -Q | grep $1' # list
 
 alias emacs='emacs -nw'
+
