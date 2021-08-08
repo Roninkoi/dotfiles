@@ -12,6 +12,9 @@ alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
 # pacman aliases for Arch
+
+alias update='pacman -Syu && yay -Syu'
+
 alias pac='pacman'
 alias paci='pacman -S' # install
 alias pacu='pacman -Syu' # update
