@@ -24,6 +24,3 @@ alias yays='yay -Ss' # search
 alias yayl='yay -Q | grep $1' # list
 
 alias emacs='emacs -nw'
-
-# dotfiles git
-alias config='/usr/bin/git --git-dir=/home/rak/.cfg/ --work-tree=/home/rak'
