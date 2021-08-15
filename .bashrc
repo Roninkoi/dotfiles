@@ -10,6 +10,9 @@ if [ -f ~/.bash_aliases ]; then
 	. ~/.bash_aliases
 fi
 
+export PATH=$PATH:$HOME/.local/bin:$HOME/bin:/root/.local/bin
+export EDITOR=emacs
+
 # dotfiles git
 alias config='/usr/bin/git --git-dir=/home/rak/dotfiles.git/ --work-tree=/home/rak'
 
