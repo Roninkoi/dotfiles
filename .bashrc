@@ -14,6 +14,8 @@ export PATH=$PATH:$HOME/.local/bin:$HOME/bin:/root/.local/bin
 export EDITOR='emacs -nw'
 
 # dotfiles git
+# git clone --bare https://github.com/Roninkoi/dotfiles
+# git --git-dir=/home/rak/dotfiles.git/ --work-tree=/home/rak checkout rak .
 alias config='/usr/bin/git --git-dir=/home/rak/dotfiles.git/ --work-tree=/home/rak'
 
 # development
