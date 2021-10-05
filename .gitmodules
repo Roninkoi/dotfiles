@@ -7,3 +7,6 @@
 [submodule ".emacs.d/glsl-mode"]
 	path = .emacs.d/glsl-mode
 	url = https://github.com/jimhourihan/glsl-mode
+[submodule ".emacs.d/lammps-mode"]
+	path = .emacs.d/lammps-mode
+	url = https://github.com/HaoZeke/lammps-mode
