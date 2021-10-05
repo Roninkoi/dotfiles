@@ -105,6 +105,13 @@
 ;; don't ask confirmation to kill
 (setq kill-buffer-query-functions (delq 'process-kill-buffer-query-function kill-buffer-query-functions))
 
+(defun my-kill-emacs ()
+  "No confirmation to exit"
+  (interactive)
+  (save-some-buffers nil t)
+  (kill-emacs))
+(global-set-key (kbd "C-x C-c") 'my-kill-emacs)
+
 (global-set-key [f9] 'bottom-shell)
 
 ;; disable backup
