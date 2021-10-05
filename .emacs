@@ -48,6 +48,9 @@
 (add-to-list 'load-path "~/.emacs.d/glsl-mode")
 (require 'glsl-mode)
 
+(add-to-list 'load-path "~/.emacs.d/lammps-mode")
+(require 'lammps-mode)
+
 (add-to-list 'load-path "~/.emacs.d/go-mode.el")
 (require 'go-mode)
 (setq go-mode-indent-tabs-mode t)
