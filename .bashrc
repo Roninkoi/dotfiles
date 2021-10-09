@@ -18,6 +18,8 @@ export EDITOR='emacs -nw'
 # git --git-dir=/home/rak/dotfiles.git/ --work-tree=/home/rak checkout rak .
 alias config='/usr/bin/git --git-dir=/home/rak/dotfiles.git/ --work-tree=/home/rak'
 
+alias search='grep -rnwi . -e'
+
 # development
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/rak/Documents/femocs/dealii/build/lib
 alias femocs="/home/rak/Documents/femocs/build/femocs"
