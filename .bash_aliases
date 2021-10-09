@@ -25,3 +25,5 @@ alias yayl='yay -Q | grep $1' # list
 
 alias emacs='emacs -nw'
 
+alias search='grep -rnwi . -e'
+
