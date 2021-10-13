@@ -5,11 +5,12 @@
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
  '(cua-mode t nil (cua-base))
- '(custom-enabled-themes (quote (tango-dark)))
+ '(custom-enabled-themes '(tango-dark))
  '(global-display-line-numbers-mode t)
  '(inhibit-startup-screen t)
  '(make-backup-files nil)
- '(safe-local-variable-values (quote ((TeX-command-extra-options . "-shell-escape"))))
+ '(package-selected-packages '(nhexl-mode auctex))
+ '(safe-local-variable-values '((TeX-command-extra-options . "-shell-escape")))
  '(scroll-conservatively 10000)
  '(tool-bar-mode nil))
 (custom-set-faces
@@ -37,6 +38,45 @@
 (setq-default tab-width 6)
 
 (defvaralias 'c-basic-offset 'tab-width)
+
+(defun addtab ()
+  "Add literal tab character."
+  (interactive)
+  (goto-char (point-at-bol))
+    (if (region-active-p)
+      (replace-regexp "^" "\t"
+                      nil (region-beginning) (region-end))
+     (replace-regexp "^" "\t" nil (point-at-bol) (point-at-eol))
+     )
+    )
+
+(defun deltab ()
+  "Remove first tab character of line if found."
+  (interactive)
+  (goto-char (point-at-bol))
+    (if (region-active-p)
+      (replace-regexp "^\t" ""
+                      nil (region-beginning) (region-end))
+     (replace-regexp "^\t" "" nil (point-at-bol) (point-at-eol))
+     )
+    )
+
+;; custom tab behaviour
+(global-set-key (kbd "<C-tab>") 'addtab)
+(global-set-key (kbd "<backtab>") 'deltab)
+
+(defun delws ()
+  "Remove leading whitespace."
+  (interactive)
+  (goto-char (point-at-bol))
+    (if (region-active-p)
+      (replace-regexp "^[\s\t]*" ""
+                      nil (region-beginning) (region-end))
+     (replace-regexp "^[\s\t]*" "" nil (point-at-bol) (point-at-eol))
+     )
+    )
+
+(global-set-key [f10] 'delws)
 
 ;; directory view
 (add-to-list 'load-path "~/.emacs.d/emacs-neotree")
