@@ -107,7 +107,8 @@
 (global-set-key [f6] 'preview-clearout-document)
 (global-set-key [f7] 'preview-document)
 
-(global-set-key (kbd "C-a") 'replace-string)
+(global-set-key (kbd "C-w") 'replace-string)
+(global-set-key (kbd "C-a") 'mark-whole-buffer)
 
 (global-set-key [C-mouse-4] 'text-scale-increase)
 (global-set-key [C-mouse-5] 'text-scale-decrease)
