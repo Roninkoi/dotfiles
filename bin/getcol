@@ -1,2 +1,7 @@
 #!/bin/sh
-awk '{print $'$1'}' $2
+input="-"
+if [ $# == 0 ]; then
+    echo "Usage: getcol <column number> <file>"
+    exit
+fi
+awk '{print $'$1'}' ${input}
