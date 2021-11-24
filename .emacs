@@ -153,6 +153,13 @@
   (kill-emacs))
 (global-set-key (kbd "C-x C-c") 'my-kill-emacs)
 
+(defun ask-user-about-supersession-threat (fn)
+  "Don't ask if files change on disk"
+  )
+(defun ask-user-about-lock (file opponent)
+  "Don't ask about file lock"
+   t)
+
 (global-set-key [f9] 'bottom-shell)
 
 ;; disable backup
