@@ -1,7 +1,8 @@
 #!/bin/sh
 # print lines in file between two delimiters
 
-if [ $# != 3 ]; then
+input="-"
+if [ $# -lt 2 ]; then
     echo "Usage: between <start> <end> <file>"
     exit
 fi
