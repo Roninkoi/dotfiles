@@ -1,0 +1,11 @@
+#!/bin/sh
+input="-"
+if [ $# == 0 ]; then
+    echo "Usage: sumcol <column> <file>"
+    exit
+fi
+if [ $# == 2 ]; then
+    input=$2
+fi
+awk '{s += $'$1'; n++} END {if (n > 0) print s; }' ${input}
+

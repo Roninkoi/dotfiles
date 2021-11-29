@@ -2,9 +2,12 @@
 # print lines in file between two delimiters
 
 input="-"
-if [ $# -lt 2 ]; then
+if [ $# == 0 ]; then
     echo "Usage: between <start> <end> <file>"
     exit
 fi
+if [ $# == 3 ]; then
+    input=$3
+fi
 
-sed -n '/.*'$1'/,${p;/'$2'.*/q}' $3 | sed '1d;$d'
+sed -n '/.*'$1'/,${p;/'$2'.*/q}' ${input} | sed '1d;$d'
