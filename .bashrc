@@ -19,7 +19,7 @@ export EDITOR='emacs -nw'
 alias config='/usr/bin/git --git-dir=/home/rak/dotfiles.git/ --work-tree=/home/rak'
 
 # development
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/rak/Documents/femocs/dealii/lib:/home/rak/Documents/femocs/lib:
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/rak/Documents/femocs/dealii/lib:/home/rak/Documents/femocs/lib
 export DEAL_II_DIR=/home/rak/Documents/femocs/dealii
 alias femocs="/home/rak/Documents/femocs/build/femocs"
 alias femocs_debug="/home/rak/Documents/femocs/build/femocs_debug"
