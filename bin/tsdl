@@ -1,0 +1,25 @@
+#!/bin/sh
+# Download series .ts files and concatenate into mp4 using ffmpeg
+# Usage: tsdl <url> <file prefix i.e. prefix_0.ts>
+
+if [ $# != 2 ]; then
+    echo "Usage: tsdl <url> <file prefix i.e. prefix_0.ts>"
+    exit
+fi
+
+echo "ffconcat version 1.0" > tsdl_list.txt
+i=0
+n=1000
+url=$1
+files=$2
+while [ $i -lt $n ]; do
+    file=${files}_$i.ts
+    wget ${url}${file} || break
+    echo "file ${file}" >> tsdl_list.txt
+    i=$((i+1))
+done
+
+ffmpeg -f concat -i tsdl_list.txt -c copy tsdl_out.mp4
+rm $(grep file tsdl_list.txt | awk '{print $2}')
+rm tsdl_list.txt
+
