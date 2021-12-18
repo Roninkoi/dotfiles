@@ -1,0 +1,14 @@
+#!/bin/sh
+# print lines in file after pattern
+
+input="-"
+if [ $# == 0 ]; then
+    echo "Usage: after <pattern> <file>"
+    exit
+fi
+if [ $# == 2 ]; then
+    input=$2
+fi
+
+sed -ne '/'$1'/,$ p' ${input} | sed '1d'
+
