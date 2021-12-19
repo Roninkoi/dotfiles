@@ -1,2 +1,2 @@
 #!/bin/sh
-grep -r $1 .
+grep -InHr $1 .
