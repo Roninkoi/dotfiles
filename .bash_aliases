@@ -27,3 +27,5 @@ alias emacs='emacs -nw'
 
 alias search='grep -rnwi . -e'
 
+alias mpihalf='mpirun -np 4'
+
