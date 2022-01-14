@@ -27,5 +27,7 @@ alias emacs='emacs -nw'
 
 alias search='grep -rnwi . -e'
 
+alias fikeys='localectl set-keymap fi' ## loadkeys fi
+
 alias mpihalf='mpirun -np 4'
 
