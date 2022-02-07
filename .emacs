@@ -132,6 +132,21 @@
 
 (global-set-key [f5] 'latex-compile)
 
+(setq compilation-window-height 6)
+(setq compilation-read-command nil) ;; compile right away
+(setq compilation-ask-about-save nil) ;; save automatically
+(global-set-key [f4] 'compile)
+
+(defun findmake ()
+  "Go up directory and compile using makefile when found"
+  (interactive)
+  (when (locate-dominating-file default-directory "Makefile")
+  (with-temp-buffer
+    (cd (locate-dominating-file default-directory "Makefile"))
+    (compile "make -k"))))
+
+(global-set-key [f3] 'findmake)
+
 ;; open shell on bottom (with size 30%) and switch to it
 (defun bottom-shell ()
   (interactive)
