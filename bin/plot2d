@@ -1,0 +1,11 @@
+#!/bin/sh
+# Plot 2D data
+# Usage: ./plot2d <file>
+
+file="-"
+if [ $# == 1 ]; then
+    file=$1
+fi
+
+gnuplot -p -e "set xlabel 'x'; set ylabel 'y'; plot '"${file}"' using 1:2 with points"
+
