@@ -10,7 +10,9 @@
  '(inhibit-startup-screen t)
  '(make-backup-files nil)
  '(package-selected-packages '(nhexl-mode auctex))
- '(safe-local-variable-values '((TeX-command-extra-options . "-shell-escape")))
+ '(safe-local-variable-values
+   '((compile-command . "make -k pdf")
+     (TeX-command-extra-options . "-shell-escape")))
  '(scroll-conservatively 10000)
  '(tool-bar-mode nil))
 (custom-set-faces
@@ -132,6 +134,7 @@
 
 (global-set-key [f5] 'latex-compile)
 
+(defun risky-local-variable-p (sym &optional _ignored) nil) ;; remember risky local variable (compile-command)
 (setq compilation-window-height 6)
 (setq compilation-read-command nil) ;; compile right away
 (setq compilation-ask-about-save nil) ;; save automatically
