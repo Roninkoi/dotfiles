@@ -150,6 +150,9 @@
 
 (global-set-key [f3] 'findmake)
 
+;; run file
+(global-set-key [f2] 'executable-interpret)
+
 ;; open shell on bottom (with size 30%) and switch to it
 (defun bottom-shell ()
   (interactive)
