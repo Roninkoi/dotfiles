@@ -4,6 +4,7 @@
 alias sudo='sudo '
 
 alias ls='ls --color=auto'
+alias ll='ls --color=auto -l'
 PS1='[\u@\h \W]\$ '
 
 # pacman aliases for Arch
