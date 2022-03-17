@@ -15,7 +15,8 @@ alias pac='pacman'
 alias paci='pacman -S' # install
 alias pacu='pacman -Syu' # update
 alias pacr='pacman -Rs' # remove
-alias pacs='pacman -Ss' # search
+alias pacs='pacman -Ssq' # search
+alias pacsi='pacman -Ssq | sudo pacman --needed -S -' # search & install
 alias pacl='pacman -Q | grep $1' # list
 
 alias yayi='yay -S' # install
