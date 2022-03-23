@@ -11,7 +11,8 @@
  '(make-backup-files nil)
  '(package-selected-packages '(nhexl-mode auctex))
  '(safe-local-variable-values
-   '((compile-command . "make -k pdf")
+   '((compile-command . "pdflatex koitermaa_pic.tex")
+     (compile-command . "make -k pdf")
      (TeX-command-extra-options . "-shell-escape")))
  '(scroll-conservatively 10000)
  '(tool-bar-mode nil))

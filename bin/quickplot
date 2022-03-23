@@ -1,2 +1,2 @@
 #!/bin/sh
-gnuplot -p -e "plot '-'"
+gnuplot -p -e "plot '-' using 0:1 with lines"
