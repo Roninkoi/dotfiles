@@ -136,6 +136,7 @@
 (global-set-key [f5] 'latex-compile)
 
 (defun risky-local-variable-p (sym &optional _ignored) nil) ;; remember risky local variable (compile-command)
+(setq compilation-scroll-output t)
 (setq compilation-window-height 6)
 (setq compilation-read-command nil) ;; compile right away
 (setq compilation-ask-about-save nil) ;; save automatically
