@@ -3,7 +3,7 @@ mount /dev/sda3 /mnt/arch
 mount /dev/sda4 /mnt/arch/home
 mkdir /mnt/arch/efi
 mount /dev/sda1 /efi
-cd /mnt
+cd /mnt/arch
 mount -o bind /dev dev
 mount -o bind /run run
 mount -o bind /proc proc
