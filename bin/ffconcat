@@ -1,3 +1,6 @@
 #!/bin/sh
-ffmpeg -i $1 -i $2 -filter_complex "concat=n=2:v=1:a=1" concat.mp4
+# concatenate two videos into one
+# Usage: ffconcat <video1> <video2> <out>
+
+ffmpeg -i $1 -i $2 -filter_complex "concat=n=2:v=1:a=1" $3
 
