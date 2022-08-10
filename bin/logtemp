@@ -1,0 +1,6 @@
+#!/bin/sh
+# log CPU temperature every 1 s and make a plot on exit
+rm ~/temp.log
+watch -n1 'sensors | grep Tdie >> ~/temp.log'
+awk '{print $2}' ~/temp.log | quickplot
+
