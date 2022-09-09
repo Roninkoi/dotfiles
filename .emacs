@@ -35,6 +35,8 @@
 (add-to-list 'default-frame-alist '(/ (display-pixel-height) (frame-char-height)))
 (add-to-list 'default-frame-alist '(/ (/ (display-pixel-width) 2) (frame-char-width)))
 
+(add-to-list 'global-mode-string '(" %i"))
+
 (setq indent-tabs-mode t)
 (setq tab-width 6)
 (setq-default indent-tabs-mode t)
