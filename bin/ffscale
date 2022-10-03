@@ -4,7 +4,7 @@
 # ffscale <in> <width> <out>
 h=-1
 o=$3
-if [ $# == 4 ]; then
+if [ $# = 4 ]; then
     h=$3
     o=$4
 fi

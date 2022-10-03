@@ -2,11 +2,11 @@
 # print lines in file between two delimiters
 
 input="-"
-if [ $# == 0 ]; then
+if [ $# = 0 ]; then
     echo "Usage: between <start> <end> <file>"
     exit
 fi
-if [ $# == 3 ]; then
+if [ $# = 3 ]; then
     input=$3
 fi
 

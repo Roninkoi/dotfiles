@@ -3,7 +3,7 @@
 # Usage: ./plot2d <file>
 
 file="-"
-if [ $# == 1 ]; then
+if [ $# = 1 ]; then
     file=$1
 fi
 
