@@ -1,11 +1,13 @@
 #!/bin/sh
-# Set up dotfiles in directory
-# Usage: ./dotfiles.sh <home directory>
-installdir=/home/rak
+# Set up dotfiles in home directory
+# Usage: ./dotfiles.sh <username>
+username=rak
 
-if [ $# == 1 ]; then
-    installdir=$1
+if [ $# = 1 ]; then
+    username=$1
 fi
+
+installdir=/home/${username}
 
 cd $installdir
 rm -rf dotfiles.git
@@ -17,4 +19,5 @@ git --git-dir=${installdir}/dotfiles.git/ --work-tree=${installdir} submodule up
 configalias="/usr/bin/git --git-dir=${installdir}/dotfiles.git/ --work-tree=${installdir}"
 echo "config: ${configalias}"
 sed -i "s@alias config.*@alias config=\"${configalias}\"@g" .bashrc
+sed -i "s@username=.*@username=${username}@g" .bashrc
 
