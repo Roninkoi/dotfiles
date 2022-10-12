@@ -1,10 +1,10 @@
 #!/bin/sh
 input="-"
-if [ $# == 0 ]; then
+if [ $# = 0 ]; then
     echo "Usage: mean <column> <file>"
     exit
 fi
-if [ $# == 2 ]; then
+if [ $# = 2 ]; then
     input=$2
 fi
 awk '{s += $'$1'; n++} END {if (n > 0) print s / n; }' ${input}

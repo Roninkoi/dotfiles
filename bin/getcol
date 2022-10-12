@@ -1,10 +1,10 @@
 #!/bin/sh
 input="-"
-if [ $# == 0 ]; then
+if [ $# = 0 ]; then
     echo "Usage: getcol <column number> <file>"
     exit
 fi
-if [ $# == 2 ]; then
+if [ $# = 2 ]; then
     input=$2
 fi
 awk '{print $'$1'}' ${input}
