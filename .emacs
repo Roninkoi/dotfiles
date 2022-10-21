@@ -9,7 +9,8 @@
  '(global-display-line-numbers-mode t)
  '(inhibit-startup-screen t)
  '(make-backup-files nil)
- '(package-selected-packages '(nhexl-mode auctex))
+ '(package-selected-packages '(magit auctex nhexl-mode lsp-mode yasnippet lsp-treemacs helm-lsp
+    projectile hydra flycheck company avy which-key helm-xref dap-mode company))
  '(safe-local-variable-values
    '((compile-command . "pdflatex koitermaa_pic.tex")
      (compile-command . "make -k pdf")
@@ -22,6 +23,17 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+(setq package-archives '(("elpa" . "http://tromey.com/elpa/")
+			 ("melpa" . "http://melpa.org/packages/")
+                         ("gnu" . "http://elpa.gnu.org/packages/")
+                         ("marmalade" . "http://marmalade-repo.org/packages/")))
+(package-initialize)
+(unless package-archive-contents
+ (package-refresh-contents))
+(dolist (package package-selected-packages)
+  (unless (package-installed-p package)
+    (package-install package)))
 
 (set-language-environment "UTF-8")
 
@@ -201,4 +213,26 @@
 (defun gcm-scroll-up ()
   (interactive)
   (scroll-down 1))
+
+(helm-mode)
+(require 'helm-xref)
+(define-key global-map [remap find-file] #'helm-find-files)
+(define-key global-map [remap execute-extended-command] #'helm-M-x)
+(define-key global-map [remap switch-to-buffer] #'helm-mini)
+
+(which-key-mode)
+(add-hook 'c-mode-hook 'lsp)
+(add-hook 'c++-mode-hook 'lsp)
+
+(setq gc-cons-threshold (* 100 1024 1024)
+      read-process-output-max (* 1024 1024)
+      treemacs-space-between-root-nodes nil
+      company-idle-delay 0.0
+      company-minimum-prefix-length 1
+      lsp-idle-delay 0.1)  ;; clangd is fast
+
+(with-eval-after-load 'lsp-mode
+  (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration)
+  (require 'dap-cpptools)
+  (yas-global-mode))
 
