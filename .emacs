@@ -9,11 +9,10 @@
  '(global-display-line-numbers-mode t)
  '(inhibit-startup-screen t)
  '(make-backup-files nil)
- '(package-selected-packages '(magit auctex nhexl-mode lsp-mode yasnippet lsp-treemacs helm-lsp
+ '(package-selected-packages '(magit dash auctex nhexl-mode lsp-mode yasnippet lsp-treemacs helm-lsp
     projectile hydra flycheck company avy which-key helm-xref dap-mode company))
  '(safe-local-variable-values
-   '((compile-command . "pdflatex koitermaa_pic.tex")
-     (compile-command . "make -k pdf")
+   '((compile-command . "make -k pdf")
      (TeX-command-extra-options . "-shell-escape")))
  '(scroll-conservatively 10000)
  '(tool-bar-mode nil))
@@ -38,11 +37,11 @@
 (set-language-environment "UTF-8")
 
 ;; font size
-(set-face-attribute 'default nil :height 140)
+(set-face-attribute 'default nil :height 170)
 
 ;; window size
-;;(add-to-list 'default-frame-alist '(height . 50))
-;;(add-to-list 'default-frame-alist '(width . 110))
+(add-to-list 'default-frame-alist '(height . 40))
+(add-to-list 'default-frame-alist '(width . 90))
 
 (add-to-list 'default-frame-alist '(/ (display-pixel-height) (frame-char-height)))
 (add-to-list 'default-frame-alist '(/ (/ (display-pixel-width) 2) (frame-char-width)))
