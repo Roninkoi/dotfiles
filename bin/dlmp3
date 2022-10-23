@@ -1,2 +1,2 @@
 #!/bin/sh
-yt-dlp -f bestaudio -x --audio-format=mp3 --no-mtime -o "%(title)s.%(ext)s" $1
+yt-dlp -f bestaudio --add-metadata -x --audio-format=mp3 --no-mtime -o "%(title)s.%(ext)s" $1
