@@ -1,2 +1,10 @@
 #!/bin/sh
+dir="/home/rak/Music"
+
+if [ $# = 2 ]; then
+    dir=$2
+fi
+
+cd $dir
+
 yt-dlp -f bestaudio --add-metadata -x --audio-format=mp3 --no-mtime -o "%(title)s.%(ext)s" $1
