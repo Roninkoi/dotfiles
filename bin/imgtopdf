@@ -5,7 +5,7 @@
 eval outfile='$'$#
 infiles="$1"
 shift
-while test $# -gt 1; do
+while [ $# -gt 1 ]; do
     infiles="$infiles,$1"
     shift
 done
