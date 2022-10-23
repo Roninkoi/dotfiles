@@ -1,4 +1,6 @@
 #!/bin/sh
+# Download video as mp3 file with metadata
+# Usage: dlmp3 <url> [directory]
 dir="/home/rak/Music"
 
 if [ $# = 2 ]; then
@@ -7,4 +9,5 @@ fi
 
 cd $dir
 
-yt-dlp -f bestaudio --add-metadata -x --audio-format=mp3 --no-mtime -o "%(title)s.%(ext)s" $1
+yt-dlp -f bestaudio --embed-metadata --parse-metadata "title:%(artist)s - %(title)s" -x --audio-format=mp3 --no-mtime -o "%(fulltitle)s.%(ext)s" $1
+
