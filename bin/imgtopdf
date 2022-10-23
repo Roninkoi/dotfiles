@@ -1,6 +1,6 @@
 #!/bin/sh
 # create a single pdf file from multiple images using ImageMagick
-# Usage: imgtopdf <img1.jpg> <img2.jpg> <img3.jpg>
+# Usage: imgtopdf <img1.jpg> [...]
 #mogrify -format pdf $@
 oldifs="$IFS"
 IFS=','

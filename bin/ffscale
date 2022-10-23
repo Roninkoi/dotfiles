@@ -1,7 +1,6 @@
 #!/bin/sh
 # scale videos using ffmpeg
-# ffscale <in> <width> <height> <out>
-# ffscale <in> <width> <out>
+# ffscale <in> <width> [height] <out>
 h=-1
 o=$3
 if [ $# = 4 ]; then

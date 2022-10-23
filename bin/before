@@ -3,7 +3,7 @@
 
 input="-"
 if [ $# = 0 ]; then
-    echo "Usage: before <pattern> <file>"
+    echo "Usage: before <pattern> [file]"
     exit
 fi
 if [ $# = 2 ]; then

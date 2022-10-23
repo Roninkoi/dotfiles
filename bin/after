@@ -3,7 +3,7 @@
 
 input="-"
 if [ $# = 0 ]; then
-    echo "Usage: after <pattern> <file>"
+    echo "Usage: after <pattern> [file]"
     exit
 fi
 if [ $# = 2 ]; then

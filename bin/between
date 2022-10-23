@@ -3,7 +3,7 @@
 
 input="-"
 if [ $# = 0 ]; then
-    echo "Usage: between <start> <end> <file>"
+    echo "Usage: between <start> <end> [file]"
     exit
 fi
 if [ $# = 3 ]; then

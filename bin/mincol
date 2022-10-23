@@ -1,0 +1,10 @@
+#!/bin/sh
+input="-"
+if [ $# == 0 ]; then
+    echo "Usage: mincol <column> [file]"
+    exit
+fi
+if [ $# == 2 ]; then
+    input=$2
+fi
+awk 'BEGIN {v = 1.e10;} {if ($'$1' < v && $'$1' != "") {v = $'$1';}} END {print v;}' ${input}
