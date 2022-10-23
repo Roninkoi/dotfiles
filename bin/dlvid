@@ -1,0 +1,11 @@
+#!/bin/sh
+dir="/home/rak/DATA/Watch/Vids"
+
+if [ $# = 2 ]; then
+    dir=$2
+fi
+
+cd $dir
+
+#youtube-dl $1
+yt-dlp --add-metadata $1
