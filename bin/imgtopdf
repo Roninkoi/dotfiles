@@ -1,11 +1,14 @@
 #!/bin/sh
 # create a single pdf file from multiple images using ImageMagick
-# Usage: imgtopdf <img1.jpg> [...]
-#mogrify -format pdf $@
-oldifs="$IFS"
-IFS=','
-infiles="$*"
-IFS=$oldifs
+# Usage: imgtopdf <img1.jpg> [...] <out.pdf>
 
-convert -density 72 "{$infiles}" -quality 100 out.pdf
+eval outfile='$'$#
+infiles="$1"
+shift
+while test $# -gt 1; do
+    infiles="$infiles,$1"
+    shift
+done
+
+convert -density 72 "{$infiles}" -quality 100 ${outfile}
 
