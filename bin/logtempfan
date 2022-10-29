@@ -1,0 +1,8 @@
+#!/bin/sh
+# log CPU temperature and fan speed every 1 s and make a plot on exit
+sensors | grep -e Tdie -e RPM | tr '\n' ' ' | 
+rm ~/temp.log
+watch -n1 "sensors | grep -e Tdie -e RPM | tr '\n' ' ' >> ~/temp.log && echo >> ~/temp.log"
+awk -i inplace '{print $2, $7, $14, $21}' ~/temp.log
+gnuplot -p -e "set xlabel 't (s)'; set ylabel 'Temp (C)'; set y2label 'Speed (RPM)'; set y2tics; plot '~/temp.log' using 0:1 title 'Temp' with lines, '~/temp.log' using 0:2 title 'Fan 1' axes x1y2 with lines, '~/temp.log' using 0:3 title 'Fan 2' axes x1y2 with lines, '~/temp.log' using 0:4 title 'Fan 3' axes x1y2 with lines"
+
