@@ -7,4 +7,4 @@ if [ $# = 4 ]; then
     h=$3
     o=$4
 fi
-ffmpeg -i $1 -vf scale=$2:$h $o
+ffmpeg -i "$1" -vf scale=$2:$h $o
