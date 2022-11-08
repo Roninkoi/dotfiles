@@ -8,6 +8,8 @@
 	helper = store
 [diff]
 	tool = vimdiff
+[merge]
+	tool = vimdiff
 [delta]
 	features = line-numbers decorations
 	line-numbers = true
