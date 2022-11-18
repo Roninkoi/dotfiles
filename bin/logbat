@@ -1,5 +1,5 @@
 #!/bin/sh
-# log CPU temperature every 1 s and make a plot on exit
+# log battery capacity 1 s and make a plot on exit
 rm ~/bat.log
 watch -n1 'checkbat | grep remaining_capacity >> ~/bat.log'
 awk '{print $3}' ~/bat.log | quickplot
