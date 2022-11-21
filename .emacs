@@ -190,13 +190,6 @@
 (global-set-key (kbd "C-x C-c") 'my-kill-emacs)
 
 (global-auto-revert-mode t)
-;;(global-auto-revert-mode -1)
-;;(defun ask-user-about-supersession-threat (fn)
-;;  "Don't ask if files change on disk"
-;;  )
-;;(defun ask-user-about-lock (file opponent)
-;;  "Don't ask about file lock"
-;;   t)
 
 (global-set-key [f9] 'bottom-shell)
 
@@ -218,6 +211,9 @@
 (define-key global-map [remap find-file] #'helm-find-files)
 (define-key global-map [remap execute-extended-command] #'helm-M-x)
 (define-key global-map [remap switch-to-buffer] #'helm-mini)
+
+(define-key helm-map (kbd "TAB") #'helm-execute-persistent-action)
+(define-key helm-map (kbd "<tab>") #'helm-execute-persistent-action)
 
 (which-key-mode)
 (add-hook 'c-mode-hook 'lsp)
