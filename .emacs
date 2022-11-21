@@ -92,7 +92,7 @@
      )
     )
 
-(global-set-key [f10] 'delws)
+(global-set-key (kbd "C-<iso-lefttab>") 'delws)
 
 ;; directory view
 (add-to-list 'load-path "~/.emacs.d/emacs-neotree")
