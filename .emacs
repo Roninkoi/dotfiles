@@ -118,10 +118,10 @@
 
 (global-set-key [f12] 'indent-buffer)
 
-(global-set-key [f11] 'tabify)
+;;(global-set-key [f11] 'tabify)
 
-(global-set-key [f6] 'preview-clearout-document)
-(global-set-key [f7] 'preview-document)
+;;(global-set-key [f6] 'preview-clearout-document)
+;;(global-set-key [f7] 'preview-document)
 
 (global-set-key (kbd "C-w") 'replace-string)
 (global-set-key (kbd "C-a") 'mark-whole-buffer)
@@ -153,6 +153,7 @@
 (setq compilation-window-height 6)
 (setq compilation-read-command nil) ;; compile right away
 (setq compilation-ask-about-save nil) ;; save automatically
+
 (global-set-key [f4] 'compile)
 
 (defun findmake ()
@@ -216,8 +217,15 @@
 (define-key helm-map (kbd "<tab>") #'helm-execute-persistent-action)
 
 (which-key-mode)
-(add-hook 'c-mode-hook 'lsp)
-(add-hook 'c++-mode-hook 'lsp)
+
+(defun start-lsp ()
+  "Start LSP"
+  (interactive)
+  (add-hook 'c-mode-hook 'lsp)
+  (add-hook 'c++-mode-hook 'lsp)
+  (lsp))
+
+(global-set-key [f6] 'start-lsp)
 
 (setq gc-cons-threshold (* 100 1024 1024)
       read-process-output-max (* 1024 1024)
