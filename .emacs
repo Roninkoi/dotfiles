@@ -41,7 +41,7 @@
 
 ;; window size
 (add-to-list 'default-frame-alist '(height . 40))
-(add-to-list 'default-frame-alist '(width . 90))
+(add-to-list 'default-frame-alist '(width . 84))
 
 (add-to-list 'default-frame-alist '(/ (display-pixel-height) (frame-char-height)))
 (add-to-list 'default-frame-alist '(/ (/ (display-pixel-width) 2) (frame-char-width)))
