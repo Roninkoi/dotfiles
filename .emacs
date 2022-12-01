@@ -9,8 +9,10 @@
  '(global-display-line-numbers-mode t)
  '(inhibit-startup-screen t)
  '(make-backup-files nil)
- '(package-selected-packages '(magit dash auctex nhexl-mode lsp-mode yasnippet lsp-treemacs helm-lsp
-    projectile hydra flycheck company avy which-key helm-xref dap-mode company))
+ '(package-selected-packages '(magit dash auctex nhexl-mode lsp-mode yasnippet
+						 lsp-treemacs helm-lsp projectile hydra
+						 flycheck company avy which-key helm-xref
+						 dap-mode company rust-mode))
  '(safe-local-variable-values
    '((compile-command . "make -k pdf")
      (TeX-command-extra-options . "-shell-escape")))
