@@ -22,7 +22,9 @@ alias config="/usr/bin/git --git-dir=/home/${username}/dotfiles.git/ --work-tree
 
 # development
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/${username}/femocs/dealii/lib:/home/${username}/femocs/lib
-##export DEAL_II_DIR=/home/${username}/femocs/dealii
+export DEAL_II_DIR=/home/${username}/femocs/dealii
 alias femocs="/home/${username}/femocs/build/femocs"
 alias femocs_debug="/home/${username}/femocs/build/femocs_debug"
+
+export MOZ_ENABLE_WAYLAND=1
 

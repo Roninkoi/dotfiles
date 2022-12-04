@@ -1,0 +1,4 @@
+#!/bin/sh
+# install package from cache
+echo "$1"
+pacman -U "file:///var/cache/pacman/pkg/$1"
