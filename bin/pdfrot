@@ -1,0 +1,11 @@
+#!/bin/sh
+# rotate pages [start, end] 90 deg in PDF
+# Usage: pdfrot <input.pdf> <start> <end> <output.pdf>
+
+if [ $# != 4 ]; then
+    echo "Usage: pdfrot <input.pdf> <start> <end> <output.pdf>"
+    return
+fi
+
+pdftk $1 rotate $2-$3right output $4
+
