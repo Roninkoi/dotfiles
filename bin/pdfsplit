@@ -1,0 +1,11 @@
+#!/bin/sh
+# take pages [start, end] from PDF
+# Usage: pdfsplit <input.pdf> <start> <end> <output.pdf>
+
+if [ $# != 4 ]; then
+    echo "Usage: pdfsplit <input.pdf> <start> <end> <output.pdf>"
+    return
+fi
+
+pdftk $1 cat $2-$3 output $4
+

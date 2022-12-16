@@ -1,0 +1,6 @@
+#!/bin/sh
+# Combine PDFs into one
+# Usage: pdfconcat <input1.pdf> <input2.pdf> ... <output.pdf>
+
+pdfunite $@
+
