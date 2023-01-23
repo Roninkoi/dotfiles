@@ -4,6 +4,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
+ '(tab-bar-mode t)
  '(cua-mode t nil (cua-base))
  '(custom-enabled-themes '(tango-dark))
  '(global-display-line-numbers-mode t)
@@ -12,11 +13,12 @@
  '(package-selected-packages '(magit dash auctex nhexl-mode lsp-mode yasnippet
 						 lsp-treemacs helm-lsp projectile hydra
 						 flycheck company avy which-key helm-xref
-						 dap-mode company rust-mode))
+						 dap-mode company rust-mode anzu))
  '(safe-local-variable-values
    '((compile-command . "make -k pdf")
      (TeX-command-extra-options . "-shell-escape")))
  '(scroll-conservatively 10000)
+ '(anzu-search-threshold 100000)
  '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -26,12 +28,12 @@
  )
 
 (setq package-archives '(("elpa" . "http://tromey.com/elpa/")
-			 ("melpa" . "http://melpa.org/packages/")
+				 ("melpa" . "http://melpa.org/packages/")
                          ("gnu" . "http://elpa.gnu.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")))
 (package-initialize)
 (unless package-archive-contents
- (package-refresh-contents))
+  (package-refresh-contents))
 (dolist (package package-selected-packages)
   (unless (package-installed-p package)
     (package-install package)))
@@ -49,6 +51,7 @@
 (add-to-list 'default-frame-alist '(/ (/ (display-pixel-width) 2) (frame-char-width)))
 
 (add-to-list 'global-mode-string '(" %i"))
+(global-anzu-mode +1)
 
 (setq indent-tabs-mode t)
 (setq tab-width 6)
@@ -61,40 +64,45 @@
   "Add literal tab character."
   (interactive)
   (goto-char (point-at-bol))
-    (if (region-active-p)
+  (if (region-active-p)
       (replace-regexp "^" "\t"
                       nil (region-beginning) (region-end))
-     (replace-regexp "^" "\t" nil (point-at-bol) (point-at-eol))
-     )
+    (replace-regexp "^" "\t" nil (point-at-bol) (point-at-eol))
     )
+  )
 
 (defun deltab ()
   "Remove first tab character of line if found."
   (interactive)
   (goto-char (point-at-bol))
-    (if (region-active-p)
+  (if (region-active-p)
       (replace-regexp "^\t" ""
                       nil (region-beginning) (region-end))
-     (replace-regexp "^\t" "" nil (point-at-bol) (point-at-eol))
-     )
+    (replace-regexp "^\t" "" nil (point-at-bol) (point-at-eol))
     )
+  )
 
 ;; custom tab behaviour
-(global-set-key (kbd "<C-tab>") 'addtab)
-(global-set-key (kbd "<backtab>") 'deltab)
+;;(global-set-key (kbd "<C-tab>") 'addtab)
+;;(global-set-key (kbd "<backtab>") 'deltab)
 
 (defun delws ()
   "Remove leading whitespace."
   (interactive)
   (goto-char (point-at-bol))
-    (if (region-active-p)
+  (if (region-active-p)
       (replace-regexp "^[\s\t]*" ""
                       nil (region-beginning) (region-end))
-     (replace-regexp "^[\s\t]*" "" nil (point-at-bol) (point-at-eol))
-     )
+    (replace-regexp "^[\s\t]*" "" nil (point-at-bol) (point-at-eol))
     )
+  )
 
-(global-set-key (kbd "C-<iso-lefttab>") 'delws)
+;;(global-set-key (kbd "C-<iso-lefttab>") 'delws)
+
+;; tab bar shortcuts
+(global-set-key (kbd "C-t") 'tab-new)
+(global-set-key (kbd "S-C-t") 'tab-close)
+(global-set-key (kbd "C-d") 'find-file-other-tab)
 
 ;; directory view
 (add-to-list 'load-path "~/.emacs.d/emacs-neotree")
@@ -116,7 +124,7 @@
 (defun indent-buffer ()
   (interactive)
   (save-excursion
-	(indent-region (point-min) (point-max) nil)))
+    (indent-region (point-min) (point-max) nil)))
 
 (global-set-key [f12] 'indent-buffer)
 
@@ -134,11 +142,11 @@
 (defun my/add-auctex-file-variables ()
   (interactive)
   (if (and (not buffer-read-only)
-		   (string= (file-name-extension (buffer-file-name)) "tex"))
-	  (progn
-		(add-file-local-variable 'coding 'utf-8-unix)
-		(add-file-local-variable 'TeX-engine 'luatex)
-		(goto-char (point-min)))))
+	     (string= (file-name-extension (buffer-file-name)) "tex"))
+	(progn
+	  (add-file-local-variable 'coding 'utf-8-unix)
+	  (add-file-local-variable 'TeX-engine 'luatex)
+	  (goto-char (point-min)))))
 
 (add-hook 'LaTeX-mode-hook 'my/add-auctex-file-variables)
 
@@ -162,9 +170,9 @@
   "Go up directory and compile using makefile when found"
   (interactive)
   (when (locate-dominating-file default-directory "Makefile")
-  (with-temp-buffer
-    (cd (locate-dominating-file default-directory "Makefile"))
-    (compile "make -k"))))
+    (with-temp-buffer
+	(cd (locate-dominating-file default-directory "Makefile"))
+	(compile "make -k"))))
 
 (global-set-key [f3] 'findmake)
 
@@ -175,8 +183,8 @@
 (defun bottom-shell ()
   (interactive)
   (let ((w (split-window-below (round (* 0.7 (window-height))))))
-	(select-window w)
-	(shell))
+    (select-window w)
+    (shell))
   (switch-to-buffer "*shell*"))
 
 ;; open shell in same window
