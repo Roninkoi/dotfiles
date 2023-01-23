@@ -102,7 +102,7 @@
 ;; tab bar shortcuts
 (global-set-key (kbd "C-t") 'tab-new)
 (global-set-key (kbd "S-C-t") 'tab-close)
-(global-set-key (kbd "C-d") 'find-file-other-tab)
+(global-set-key (kbd "C-x C-g") 'find-file-other-tab)
 
 ;; directory view
 (add-to-list 'load-path "~/.emacs.d/emacs-neotree")
@@ -138,6 +138,11 @@
 
 (global-set-key [C-mouse-4] 'text-scale-increase)
 (global-set-key [C-mouse-5] 'text-scale-decrease)
+
+(global-set-key (kbd "C-x <up>") 'windmove-up)
+(global-set-key (kbd "C-x <down>") 'windmove-down)
+(global-set-key (kbd "C-x <right>") 'windmove-right)
+(global-set-key (kbd "C-x <left>") 'windmove-left)
 
 (defun my/add-auctex-file-variables ()
   (interactive)
