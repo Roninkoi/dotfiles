@@ -33,4 +33,5 @@ alias fikeys='localectl set-keymap fi' ## loadkeys fi
 
 alias mpihalf='mpirun -np 16'
 
+alias watchio='dstat -D'
 
