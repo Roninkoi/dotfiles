@@ -1,0 +1,14 @@
+#!/bin/sh
+# split lines into words based on delimiter
+
+input="-"
+if [ $# = 0 ]; then
+    echo "Usage: words <delimiter> [file]"
+    exit
+fi
+if [ $# = 2 ]; then
+    input=$2
+fi
+
+sed 's/'$1'/ /g' ${input}
+
