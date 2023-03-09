@@ -18,7 +18,7 @@ export EDITOR='emacs -nw'
 # dotfiles git
 # git clone --bare https://github.com/Roninkoi/dotfiles
 # git --git-dir=/home/rak/dotfiles.git/ --work-tree=/home/rak checkout rak .
-alias config="/usr/bin/git --git-dir=/home/rak/dotfiles.git/ --work-tree=/home/rak"
+alias config="/usr/bin/git --git-dir=/home/${username}/dotfiles.git/ --work-tree=/home/${username}"
 
 # development
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/${username}/femocs/dealii/lib:/home/${username}/femocs/lib
