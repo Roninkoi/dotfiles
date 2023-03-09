@@ -28,6 +28,9 @@ alias yayb='yay --getpkgbuild' # download PKGBUILD
 
 alias emacs='emacs -nw'
 
+alias gitld='git diff @~..@' # last commit diff
+alias configld='config diff @~..@'
+
 alias search='grep -rnwi . -e'
 
 alias fikeys='localectl set-keymap fi' ## loadkeys fi
