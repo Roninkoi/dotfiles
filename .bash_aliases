@@ -24,6 +24,7 @@ alias yayu='yay -Syu' # update
 alias yayr='yay -Rs' # remove
 alias yays='yay -Ss' # search
 alias yayl='yay -Q | grep' # list
+alias yayb='yay --getpkgbuild' # download PKGBUILD
 
 alias emacs='emacs -nw'
 

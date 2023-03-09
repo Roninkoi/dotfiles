@@ -41,7 +41,7 @@
 (set-language-environment "UTF-8")
 
 ;; font size
-(set-face-attribute 'default nil :height 170)
+(set-face-attribute 'default nil :height 140)
 
 ;; window size
 (add-to-list 'default-frame-alist '(height . 40))
