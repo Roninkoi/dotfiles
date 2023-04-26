@@ -144,7 +144,8 @@
 (global-set-key (kbd "C-x <right>") 'windmove-right)
 (global-set-key (kbd "C-x <left>") 'windmove-left)
 
-(global-set-key (kbd "C-c -") 'TeX-next-error)
+(global-set-key (kbd "C-c ö") 'TeX-previous-error)
+(global-set-key (kbd "C-c ä") 'TeX-next-error)
 
 (defun my/add-auctex-file-variables ()
   (interactive)
