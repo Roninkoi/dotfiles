@@ -1,10 +1,10 @@
 #!/bin/sh
 disk=nvme0n1p
 mkdir /mnt/arch
-mount /dev/${nvme0n1p}3 /mnt/arch
-mount /dev/${nvme0n1p}4 /mnt/arch/home
+mount /dev/${disk}3 /mnt/arch
+mount /dev/${disk}4 /mnt/arch/home
 mkdir /mnt/arch/boot/efi
-mount -t auto /dev/${nvme0n1p}1 /mnt/arch/boot/efi
+mount -t auto /dev/${disk}1 /mnt/arch/boot/efi
 cd /mnt/arch
 mount -o bind /dev dev
 mount -o bind /run run
