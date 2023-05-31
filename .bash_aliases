@@ -33,6 +33,8 @@ alias configld='config diff @~..@'
 
 alias search='grep -rnwi . -e'
 
+alias archive='rsync -a --progress'
+
 alias fikeys='localectl set-keymap fi' ## loadkeys fi
 
 alias mpihalf='mpirun -np 16'
