@@ -3,6 +3,10 @@
 # ffscale <in> <width> [height] <out>
 h=-1
 o=$3
+if [ $# = 0 ]; then
+    echo "Usage: ffscale <in> <width> [height] <out>"
+    exit
+fi
 if [ $# = 4 ]; then
     h=$3
     o=$4
