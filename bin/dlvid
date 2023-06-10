@@ -10,4 +10,4 @@ fi
 cd $dir
 
 #youtube-dl $1
-yt-dlp --add-metadata $1
+yt-dlp --add-metadata $1 || yt-dlp --add-metadata -o "%(id)s.%(ext)s" $1
