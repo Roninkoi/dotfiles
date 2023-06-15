@@ -18,6 +18,7 @@ alias pacr='pacman -Rs' # remove
 alias pacs='pacman -Ss' # search
 alias pacsi='pacman -Ssq | sudo pacman --needed -S -' # search & install
 alias pacl='pacman -Q | grep' # list
+alias paclm='pacman -Qm | grep' # list AUR
 
 alias yayi='yay -S' # install
 alias yayu='yay -Syu' # update
@@ -40,4 +41,7 @@ alias fikeys='localectl set-keymap fi' ## loadkeys fi
 alias mpihalf='mpirun -np 16'
 
 alias watchio='dstat -D'
+
+##alias switch1='ddcutil -b 6 setvcp 0x60 0x11'
+##alias switch3='ddcutil -b 6 setvcp 0x60 0x11'
 
