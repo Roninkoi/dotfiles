@@ -41,6 +41,7 @@ alias fikeys='localectl set-keymap fi' ## loadkeys fi
 alias mpihalf='mpirun -np 16'
 
 alias watchio='dstat -D'
+alias netmon='netstat -natp'
 
 ##alias switch1='ddcutil -b 6 setvcp 0x60 0x11'
 ##alias switch3='ddcutil -b 6 setvcp 0x60 0x11'
