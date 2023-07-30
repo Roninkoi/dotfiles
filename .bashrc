@@ -25,6 +25,12 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/${username}/femocs/dealii/lib:/hom
 export DEAL_II_DIR=/home/${username}/femocs/dealii
 alias femocs="/home/${username}/femocs/build/femocs"
 alias femocs_debug="/home/${username}/femocs/build/femocs_debug"
+alias femocs_plot="/home/${username}/Code/FEMOCS-plotters/plot_femocs.sh"
 
 export MOZ_ENABLE_WAYLAND=1
+
+export PROTON_HIDE_NVIDIA_GPU=0
+export PROTON_ENABLE_NVAPI=1
+export VKD3D_CONFIG=dxr,dxr11
+export PROTON_ENABLE_NGX_UPDATER=1
 
