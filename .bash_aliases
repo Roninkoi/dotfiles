@@ -20,12 +20,13 @@ alias pacsi='pacman -Ssq | sudo pacman --needed -S -' # search & install
 alias pacl='pacman -Q | grep' # list
 alias paclm='pacman -Qm | grep' # list AUR
 
-alias yayi='yay -S' # install
-alias yayu='yay -Syu' # update
-alias yayr='yay -Rs' # remove
-alias yays='yay -Ss' # search
-alias yayl='yay -Q | grep' # list
-alias yayb='yay --getpkgbuild' # download PKGBUILD
+alias yay='yay --aur'
+alias yayi='yay --aur -S' # install
+alias yayu='yay --aur -Syu' # update
+alias yayr='yay --aur -Rs' # remove
+alias yays='yay --aur -Ss' # search
+alias yayl='yay --aur -Q | grep' # list
+alias yayb='yay --aur --getpkgbuild' # download PKGBUILD
 
 alias emacs='emacs -nw'
 
