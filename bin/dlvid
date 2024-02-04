@@ -1,7 +1,7 @@
 #!/bin/sh
 # Download video with metadata
 # dlvid <url> [directory]
-dir="/home/rak/DATA/Watch/Vids"
+dir="."
 
 if [ $# = 2 ]; then
     dir=$2
