@@ -1,0 +1,8 @@
+#!/bin/sh
+# speed up video using ffmpeg
+# ffspeed <in> <speed> <out>
+if [ $# -ne 3 ]; then
+    echo "Usage: ffspeed <in> <speed> <out>"
+    exit
+fi
+ffmpeg -an -i "$1" -filter:v "setpts=PTS/$2" "$3"
