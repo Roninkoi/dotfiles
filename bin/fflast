@@ -1,0 +1,14 @@
+#!/bin/sh
+# get last frame of video using ffmpeg
+# fflast <in> <out>
+input="out.mp4"
+output="out.png"
+if [ $# = 0 ]; then
+    echo "Usage: ffscale <in> <out>"
+    exit
+fi
+if [ $# = 2 ]; then
+    input=$1
+    output=$2
+fi
+ffmpeg -sseof -3 -i $input -update 1 -q:v 1 $output
