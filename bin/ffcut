@@ -1,0 +1,25 @@
+#!/bin/sh
+# Cut a video using ffmpeg
+# Usage: ffcut <in> <start time> <end time> <out>
+
+infile="in.mp4"
+start="00:00:00"
+end="00:01:00"
+outfile="out.mp4"
+if [ $# = 0 ]; then
+    echo "Usage: ffcut <in> <start time> <end time> <out>"
+    exit
+fi
+if [ $# = 4 ]; then
+   infile=$1
+   start=$2
+   end=$3
+   outfile=$4
+fi
+
+t1=$(date -d "$start" "+%s")
+t2=$(date -d "$end" "+%s")
+diff=$(echo $t1 $t2 | awk '{print ($2 - $1)}')
+
+ffmpeg -ss "$start" -i "$infile" -c copy -t "$diff" $outfile
+
