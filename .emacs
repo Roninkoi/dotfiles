@@ -82,10 +82,6 @@
     )
   )
 
-;; custom tab behaviour
-;;(global-set-key (kbd "<C-tab>") 'addtab)
-;;(global-set-key (kbd "<backtab>") 'deltab)
-
 (defun delws ()
   "Remove leading whitespace."
   (interactive)
@@ -97,6 +93,24 @@
     )
   )
 
+(defun indent ()
+  (interactive)
+  (if (region-active-p)
+	(indent-rigidly (region-beginning) (region-end) 6)
+    (indent-rigidly (line-beginning-position) (line-end-position) 6)
+    )
+  )
+
+(defun unindent ()
+  (interactive)
+  (if (region-active-p)
+	(indent-rigidly (region-beginning) (region-end) -6)
+    (indent-rigidly (line-beginning-position) (line-end-position) -6)
+    )
+  )
+
+(global-set-key (kbd "<tab>") 'indent)
+(global-set-key (kbd "<backtab>") 'unindent)
 ;;(global-set-key (kbd "C-<iso-lefttab>") 'delws)
 
 ;; tab bar shortcuts
@@ -257,3 +271,4 @@
   (require 'dap-cpptools)
   (yas-global-mode))
 
+(put 'downcase-region 'disabled nil)
