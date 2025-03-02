@@ -28,22 +28,30 @@ alias yays='yay --aur -Ss' # search
 alias yayl='yay --aur -Q | grep' # list
 alias yayb='yay --aur --getpkgbuild' # download PKGBUILD
 
-alias emacs='emacs -nw'
-
-alias gitld='git diff @~..@' # last commit diff
-alias configld='config diff @~..@'
+# system
 
 alias search='grep -rnwi . -e'
-
 alias archive='rsync -a --progress'
+alias untar='tar -xvf'
 
 alias fikeys='localectl set-keymap fi' ## loadkeys fi
-
-alias mpihalf='mpirun -np 16'
 
 alias watchio='dstat -D'
 alias netmon='netstat -natp'
 
 ##alias switch1='ddcutil -b 6 setvcp 0x60 0x11'
 ##alias switch3='ddcutil -b 6 setvcp 0x60 0x11'
+
+# development
+
+alias emacs='emacs -nw'
+
+alias gitld='git diff @~..@' # last commit diff
+alias configld='config diff @~..@'
+
+alias mpihalf='mpirun -np 16'
+
+alias femocs="$HOME/femocs/build/femocs"
+alias femocs_debug="$HOME/femocs/build/femocs_debug"
+alias femocs_plot="$HOME/Code/FEMOCS-plotters/plot_femocs.sh"
 
