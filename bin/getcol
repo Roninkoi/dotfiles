@@ -1,10 +1,15 @@
 #!/bin/sh
 input="-"
+sep="[ \t+]"
 if [ $# = 0 ]; then
-    echo "Usage: getcol <column number> [file]"
+    echo "Usage: getcol <column number> [file] [separator]"
     exit
 fi
 if [ $# = 2 ]; then
     input=$2
 fi
-awk '{print $'$1'}' ${input}
+if [ $# = 3 ]; then
+    input=$2
+    sep=$3
+fi
+awk -F"${sep}" '{print $'$1'}' ${input}
