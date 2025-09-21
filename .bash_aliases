@@ -36,8 +36,10 @@ alias untar='tar -xvf'
 
 alias fikeys='localectl set-keymap fi' ## loadkeys fi
 
-alias watchio='dstat -D'
+alias watchio="watch -n1 'iostat'"
 alias netmon='netstat -natp'
+
+alias dusort='du -h | sort -h'
 
 ##alias switch1='ddcutil -b 6 setvcp 0x60 0x11'
 ##alias switch3='ddcutil -b 6 setvcp 0x60 0x11'
