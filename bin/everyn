@@ -1,0 +1,16 @@
+#!/bin/sh
+input="-"
+offs=0
+if [ $# = 0 ]; then
+    echo "Usage: everyn <n> [offs] [file]"
+    exit
+fi
+if [ $# = 2 ]; then
+    offs=$2
+fi
+if [ $# = 3 ]; then
+    input=$3
+fi
+
+awk 'NR%'$1'=='${offs} ${input}
+
