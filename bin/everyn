@@ -9,6 +9,7 @@ if [ $# = 2 ]; then
     offs=$2
 fi
 if [ $# = 3 ]; then
+    offs=$2
     input=$3
 fi
 
