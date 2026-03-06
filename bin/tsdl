@@ -8,24 +8,47 @@ if [ $# -lt 2 ]; then
 fi
 
 echo "ffconcat version 1.0" > tsdl_list.txt
+
 i=0
 n=1000
 url=$1
 prefix=$2
 postfix=".ts"
+tries=0
+
 if [ $# -ge 3 ]; then
     postfix=$3
 fi
 if [ $# -ge 4 ]; then
     i=$4
 fi
+
+handler() {
+    echo "Stopping..."
+    i=$n
+}
+
+trap handler INT 
+
 while [ $i -lt $n ]; do
     file=${prefix}$i${postfix}
-    wget ${url}${file} || break
-    echo "file ${file}" >> tsdl_list.txt
-    i=$((i+1))
+    wget ${url}${file}
+    ret=$?
+    if [ ${ret} -eq 0 ]; then
+	  echo "file ${file}" >> tsdl_list.txt
+	  i=$((i+1))
+	  tries=0
+    else
+	  echo "Waiting for next one..."
+	  sleep 10
+	  tries=$((tries+1))
+    fi
+    if [ ${tries} -ge 6 ]; then
+	  break
+    fi
 done
 
 ffmpeg -f concat -i tsdl_list.txt -c copy tsdl_out.mp4
 rm $(grep file tsdl_list.txt | awk '{print $2}')
 rm tsdl_list.txt
+
