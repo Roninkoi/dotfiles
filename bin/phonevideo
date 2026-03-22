@@ -1,0 +1,2 @@
+#!/bin/sh
+scrcpy --video-source=camera --no-audio

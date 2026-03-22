@@ -1,0 +1,2 @@
+#!/bin/sh
+ sudo reflector --save /etc/pacman.d/mirrorlist --protocol https --country Finland --latest 5 --sort age --fastest 5 
